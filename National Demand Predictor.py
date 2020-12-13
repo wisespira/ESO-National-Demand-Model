@@ -15,22 +15,45 @@ from lime import lime_tabular
 from datetime import datetime
 
 #ESO set-up
-ESO_Data = pd.read_csv("demanddata_2019.csv")
-cols = ["SETTLEMENT_DATE","SETTLEMENT_PERIOD","ND"]
+ESO_Data = pd.read_csv("demand-data-2020.csv")
+cols = ["SETTLEMENT_DATE","ND"]
 ESO_Data = ESO_Data[cols]
 
+currentDate = ""
+ESO_DataSubSet = pd.DataFrame(columns=cols)
+daysAvgND = 0
 
-ESO_Data = ESO_Data["SETTLEMENT_DATE"<'10-MAR-2019']
-
+#Take Avarage Demand for each SETTLEMENT_DATE
 for index, row in ESO_Data.iterrows():
-	date = datetime.strptime(row[["SETTLEMENT_DATE"]], '%d-%b-%Y')
-	if(date < datetime.strptime('10-MAR-2019', '%d-%b-%Y')):
-		print(row["SETTLEMENT_DATE"])
+	date = datetime.strptime(row["SETTLEMENT_DATE"], '%d-%b-%Y')
+	
+	if(currentDate == ""):
+		currentDate = date
+		
+	if(date < datetime.strptime('01-SEP-2020', '%d-%b-%Y')):
+	
+		if(currentDate==date):
+			daysAvgND = daysAvgND + row["ND"]
+		else:
+			#print(date.strftime('%d-%b-%Y') + " " + str(daysAvgND/48))
+			ESO_DataSubSet = ESO_DataSubSet.append({'SETTLEMENT_DATE': date.strftime('%d-%b-%Y'),'ND': str(daysAvgND/48)}, ignore_index=True)
+			daysAvgND = row["ND"]
+			currentDate = date
 	else:
 		break
 
+#ESO_DataSubSet = ESO_DataSubSet.append(row)		
+		
+print(ESO_DataSubSet.head())
 
 ESO_Data = ESO_Data.rename(columns={"ND":"Y"})
+
+
+
+
+
+
+
 
 
 
