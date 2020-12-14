@@ -1,3 +1,4 @@
+<center>
 <h2 align="center"> ESO-National-Demand-Model</h2>
 
 <p>
@@ -5,16 +6,34 @@
 </p>
 <h3>contents</h3>
 
-<p align="center">
+<center>
+
+| This | Is | A | Table |
+| :--- | -- | - | ----: |
+| foo  | ba | r | elbaT |
+
+</center>
 
 <!--ts-->
    * [Introduction](#Introduction)
    * [Inital Analysis](#Inital_Analysis)
 <!--te-->
 
-</p>
+
 
 <p align="center">
  <h3 align="center">Inital Analysis</h3>
  <img src="https://raw.githubusercontent.com/wisespira/ESO-National-Demand-Model/master/probability%20distribution%20of%20National%20Demand.png">
 </p>
+
+
+
+<center>
+
+| Tables   |      Are      |  Cool |
+|----------|:-------------:|------:|
+| col 1 is |  left-aligned | $1600 |
+| col 2 is |    centered   |   $12 |
+| col 3 is | right-aligned |    $1 |
+
+</center>
