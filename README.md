@@ -3,20 +3,15 @@
 <p>
  This project combines the National Gride ESO's Data Portal with national weather data to create a predictive model for national demand. To run the model use the National Demand Predictor.py file. 
 </p>
-Table of contents
-
-
+<h3>contents</h3>
 <!--ts-->
-   * [gh-md-toc](#gh-md-toc)
-   * [Table of contents](#table-of-contents)
-   * [Installation](#installation)
-   * [Usage](#usage)
-      * [STDIN](#stdin)
+   * [Introduction](#Introduction)
+   * [Inital Analysis](#Inital Analysis)
 <!--te-->
 
 
 
 <p align="center">
- <h3 align="center">Inital Data Analysis</h3>
+ <h3 align="center">Inital Analysis</h3>
  <img src="https://raw.githubusercontent.com/wisespira/ESO-National-Demand-Model/master/probability%20distribution%20of%20National%20Demand.png">
 </p>
