@@ -9,6 +9,7 @@
 <!--ts-->
    * [Introduction](#Introduction)
    * [Inital Analysis](#Inital_Analysis)
+   * [Installation](#installation)
 <!--te-->
 
 
@@ -19,3 +20,5 @@
 </p>
 
 
+Installation
+============
