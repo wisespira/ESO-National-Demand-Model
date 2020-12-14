@@ -8,7 +8,7 @@
 
 <!--ts-->
    * [Initial Analysis](#Initial-Analysis)
-   * [Installation](#installation)
+   * [Feature Engineering](#Feature-engineering)
 <!--te-->
 
 Initial Analysis
@@ -18,9 +18,8 @@ Initial Analysis
  <img src="https://raw.githubusercontent.com/wisespira/ESO-National-Demand-Model/master/probability%20distribution%20of%20National%20Demand.png">
 </p>
 
-<p align="center">
- 
-Installation
+
+Feature engineering
 ============
 
-</p>
+Adding holidays
