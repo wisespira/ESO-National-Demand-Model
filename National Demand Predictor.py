@@ -13,8 +13,10 @@ from sklearn import model_selection, preprocessing, feature_selection, ensemble,
 ## for explainer
 from lime import lime_tabular
 from datetime import datetime
+from sklearn.linear_model import LinearRegression
 
-#ESO set-up
+
+#******************ESO set-up***********************
 ESO_Data = pd.read_csv("demand-data-2020.csv")
 cols = ["SETTLEMENT_DATE","ND"]
 ESO_Data = ESO_Data[cols]
@@ -40,37 +42,41 @@ for index, row in ESO_Data.iterrows():
 			daysAvgND = row["ND"]
 			currentDate = date
 	else:
-		break
-
-#ESO_DataSubSet = ESO_DataSubSet.append(row)		
+		break	
 		
 print(ESO_DataSubSet.head())
-
-ESO_Data = ESO_Data.rename(columns={"ND":"Y"})
-
-
+ESO_Data = ESO_DataSubSet
+ESO_Data = ESO_Data.rename(columns={"ND":"dailyND"})
 
 
-
-
-
-
-
-
-#Weather.com data set-up
+#******************Weather.com data set-up***********************
 weatherData = pd.read_csv("data from weather.com.csv")
 cols = ["Date","London Avg Temp"]
 weatherData = weatherData[cols]
 #print(weatherData.head())
 
+#This works as the dates are in line (both start on 1st JAN 2020, Should refactor <----
+ESO_Data = ESO_Data.join(weatherData["London Avg Temp"])
+ESO_Data["dailyND"] = ESO_Data.dailyND.astype(float)
+print(ESO_Data.dtypes)
 
 
 
 
+column_1 = ESO_Data["dailyND"]
+column_2 = ESO_Data["London Avg Temp"]
+correlation = column_1.corr(column_2)
+
+plt.title('Average Daily National Demand Against \nAvarage Daily Temperature in London')
+sns.regplot(x=ESO_Data['dailyND'],y=ESO_Data['London Avg Temp'])
+plt.show()
+print(correlation)
 
 
 
-def dataAnalysis(dtf):
+
+#ESO_Data = ESO_Data.rename(columns={"ND":"Y"})
+def probabilityDistributionGraph(veriable):
 	x = "Y"
 	fig, ax = plt.subplots(nrows=1, ncols=2,  sharex=False, sharey=False)
 	fig.suptitle(x, fontsize=20)
