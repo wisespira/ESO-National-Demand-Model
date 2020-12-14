@@ -17,78 +17,12 @@ from sklearn.linear_model import LinearRegression
 
 
 #******************ESO set-up***********************
-ESO_Data = pd.read_csv("demand-data-2020.csv")
-cols = ["SETTLEMENT_DATE","ND"]
-ESO_Data = ESO_Data[cols]
-
-currentDate = ""
-ESO_DataSubSet = pd.DataFrame(columns=cols)
-daysAvgND = 0
-startingDay = 2 #Wedensday is 1/1/20
-
-weekDay = 0
-
-dayOfWeek = 3
-
-def getWeekDay():
-	global dayOfWeek
-	if(dayOfWeek<=4):
-		dayOfWeek += 1
-		return 1
-	elif(dayOfWeek ==5):
-		dayOfWeek += 1
-		return 0
-	else:
-		dayOfWeek=0
-		return 0
-		
-		
-	
-
-#print(date.strftime('%d-%b-%Y') + " " + str(daysAvgND/48))
-#Take Avarage Demand for each SETTLEMENT_DATE
-for index, row in ESO_Data.iterrows():
-	date = datetime.strptime(row["SETTLEMENT_DATE"], '%d-%b-%Y')
-	
-	if(currentDate == ""):
-		currentDate = date
-		
-	if(date < datetime.strptime('01-SEP-2020', '%d-%b-%Y')):
-	#Could refactor day increment to be here <----------
-		if(currentDate==date):
-			daysAvgND = daysAvgND + row["ND"]
-		else:		
-			ESO_DataSubSet = ESO_DataSubSet.append({'SETTLEMENT_DATE': date.strftime('%d-%b-%Y'),'ND': str(daysAvgND/48),'Week_Day':getWeekDay()}, ignore_index=True)
-			daysAvgND = row["ND"]
-			currentDate = date
-	else:
-		break	
-		
-print(ESO_DataSubSet.head())
-ESO_Data = ESO_DataSubSet
-ESO_Data = ESO_Data.rename(columns={"ND":"dailyND"})
-
-
-#******************Weather.com data set-up***********************
-weatherData = pd.read_csv("data from weather.com.csv")
-cols = ["Date","London Avg Temp"]
-weatherData = weatherData[cols]
-#print(weatherData.head())
-
-#This works as the dates are in line (both start on 1st JAN 2020, Should refactor <----
-ESO_Data = ESO_Data.join(weatherData["London Avg Temp"])
-ESO_Data["dailyND"] = ESO_Data.dailyND.astype(float)
-print(ESO_Data.dtypes)
-
-
-
-
-
+ESO_Data = pd.read_csv("modelData.csv")
 correlation = ESO_Data["dailyND"].corr(ESO_Data["London Avg Temp"])
 
 plt.title('Average Daily National Demand Against \nAvarage Daily Temperature in London')
 sns.regplot(x=ESO_Data['dailyND'],y=ESO_Data['London Avg Temp'])
-#plt.show()
+plt.show()
 print(correlation)
 
 
