@@ -24,7 +24,28 @@ ESO_Data = ESO_Data[cols]
 currentDate = ""
 ESO_DataSubSet = pd.DataFrame(columns=cols)
 daysAvgND = 0
+startingDay = 2 #Wedensday is 1/1/20
 
+weekDay = 0
+
+dayOfWeek = 3
+
+def getWeekDay():
+	global dayOfWeek
+	if(dayOfWeek<=4):
+		dayOfWeek += 1
+		return 1
+	elif(dayOfWeek ==5):
+		dayOfWeek += 1
+		return 0
+	else:
+		dayOfWeek=0
+		return 0
+		
+		
+	
+
+#print(date.strftime('%d-%b-%Y') + " " + str(daysAvgND/48))
 #Take Avarage Demand for each SETTLEMENT_DATE
 for index, row in ESO_Data.iterrows():
 	date = datetime.strptime(row["SETTLEMENT_DATE"], '%d-%b-%Y')
@@ -33,12 +54,11 @@ for index, row in ESO_Data.iterrows():
 		currentDate = date
 		
 	if(date < datetime.strptime('01-SEP-2020', '%d-%b-%Y')):
-	
+	#Could refactor day increment to be here <----------
 		if(currentDate==date):
 			daysAvgND = daysAvgND + row["ND"]
-		else:
-			#print(date.strftime('%d-%b-%Y') + " " + str(daysAvgND/48))
-			ESO_DataSubSet = ESO_DataSubSet.append({'SETTLEMENT_DATE': date.strftime('%d-%b-%Y'),'ND': str(daysAvgND/48)}, ignore_index=True)
+		else:		
+			ESO_DataSubSet = ESO_DataSubSet.append({'SETTLEMENT_DATE': date.strftime('%d-%b-%Y'),'ND': str(daysAvgND/48),'Week_Day':getWeekDay()}, ignore_index=True)
 			daysAvgND = row["ND"]
 			currentDate = date
 	else:
@@ -63,13 +83,12 @@ print(ESO_Data.dtypes)
 
 
 
-column_1 = ESO_Data["dailyND"]
-column_2 = ESO_Data["London Avg Temp"]
-correlation = column_1.corr(column_2)
+
+correlation = ESO_Data["dailyND"].corr(ESO_Data["London Avg Temp"])
 
 plt.title('Average Daily National Demand Against \nAvarage Daily Temperature in London')
 sns.regplot(x=ESO_Data['dailyND'],y=ESO_Data['London Avg Temp'])
-plt.show()
+#plt.show()
 print(correlation)
 
 
