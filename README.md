@@ -7,7 +7,7 @@
 <h3>contents</h3>
 
 <!--ts-->
-   * [Initial Analysis](#Initial_Analysis)
+   * [Initial Analysis](#Initial-Analysis)
    * [Installation](#installation)
 <!--te-->
 
