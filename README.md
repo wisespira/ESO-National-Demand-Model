@@ -7,11 +7,11 @@
 <h3>contents</h3>
 
 <!--ts-->
-   * [Inital Analysis](#Inital_Analysis)
+   * [Initial Analysis](#Initial_Analysis)
    * [Installation](#installation)
 <!--te-->
 
-Inital Analysis
+Initial Analysis
 ============
 
 <p align="center">
