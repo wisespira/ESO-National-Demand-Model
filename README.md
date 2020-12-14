@@ -7,7 +7,7 @@
 <h3>contents</h3>
 
 <!--ts-->
-* [Obtaining data](#Data-Gathering)
+* Obtaining data
    * [Data Gathering](#Data-Gathering)
    * [Feature Engineering](#Feature-engineering)
 * [Initial Analysis](#Initial-Analysis)
