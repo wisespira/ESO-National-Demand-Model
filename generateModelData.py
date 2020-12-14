@@ -64,6 +64,6 @@ ESO_Data["dailyND"] = ESO_Data.dailyND.astype(float)
 print(ESO_Data.dtypes)
 
 #data used for the rest of project
-ESO_Data.to_csv('modelData.csv')
+ESO_Data.to_csv('modelDataSet.csv')
 
 

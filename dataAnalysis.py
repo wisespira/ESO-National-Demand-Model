@@ -22,8 +22,13 @@ correlation = ESO_Data["dailyND"].corr(ESO_Data["London Avg Temp"])
 
 plt.title('Average Daily National Demand Against \nAvarage Daily Temperature in London')
 sns.regplot(x=ESO_Data['dailyND'],y=ESO_Data['London Avg Temp'])
-plt.show()
+#plt.show()
 print(correlation)
+
+
+
+
+
 
 
 
