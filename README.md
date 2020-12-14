@@ -1,10 +1,10 @@
 <h2 align="center"> ESO-National-Demand-Model</h2>
-============
+
 <p>
  This project combines the National Gride ESO's Data Portal with national weather data to create a predictive model for national demand. 
 </p>
 Table of contents
-=================
+
 
 <!--ts-->
    * [gh-md-toc](#gh-md-toc)
