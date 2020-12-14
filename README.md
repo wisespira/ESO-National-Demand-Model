@@ -6,9 +6,9 @@
 </p>
 <h3 align="center">contents</h3>
 <p align="center">
-<a  align="center" href="#Data-Gathering">Data Gatherin</a>
-<a  align="center" href="#Feature-engineering">Feature Engineering</a>
-<a  align="center" href="#Initial-Analysis">Initial Analysis</a>
+<a  align="center" href="#Data-Gathering">Data Gatherin</a><br>
+<a  align="center" href="#Feature-engineering">Feature Engineering</a><br>
+<a  align="center" href="#Initial-Analysis">Initial Analysis</a><br>
 </p>
 
 <a name="Data-Gathering"></a>
