@@ -2,7 +2,7 @@
 <h2 align="center"> ESO National Demand Model 📈</h2>
 
 <p >
- The aim of this project is to uses machine learning to create a predictive model for the UK's national energy demand. The data used in the model includes historical national demand infomation gathered from the National Grid ESO as well as national weather data. To run use the National Demand Predictor.py file. When selecting features 
+ The aim of this project is to uses machine learning to create a predictive model for the UK's national energy demand. The data used in the model includes historical national demand infomation gathered from the National Grid ESO as well as national weather data. To run use the National Demand Predictor.py file. 
 </p>
 <h3 align="center">contents</h3>
 <p align="center">
@@ -23,7 +23,7 @@ To combine the two data sets the ND was avaraged for each day and the weather fo
 <a name="Feature-engineering"></a>
 <h2 align="center">Feature engineering</h2>
 
-Adding holidays
+A python function was created to map each day in the data set to being a weekday given the value 1 or a weekend with the value 0.<br>
 
 <a name="Initial-Analysis"></a>
 <h2 align="center">Initial Analysis</h2>
