@@ -7,9 +7,21 @@
 <h3>contents</h3>
 
 <!--ts-->
-   * [Initial Analysis](#Initial-Analysis)
+   * [Data Gathering](#Data-Gathering)
    * [Feature Engineering](#Feature-engineering)
+   * [Initial Analysis](#Initial-Analysis)
 <!--te-->
+
+Data Gathering
+============
+
+Adding holidays
+
+Feature Engineering
+============
+
+Adding holidays
+
 
 Initial Analysis
 ============
@@ -19,7 +31,4 @@ Initial Analysis
 </p>
 
 
-Feature engineering
-============
 
-Adding holidays
