@@ -2,7 +2,7 @@
 <h2 align="center"> ESO National Demand Model 📈</h2>
 
 <p >
-This project aims to use machine learning to create a predictive model for the UK's national energy demand. The data used in the model include historical national demand information gathered from the National Grid ESO as well as national weather data.  file. 
+This project aims to use machine learning to create a predictive model for the UK's national energy demand. The data used in the model include historical national demand information gathered from the National Grid ESO as well as national weather data. 
 </p>
 <h3 align="center">contents</h3>
 <p align="center">
