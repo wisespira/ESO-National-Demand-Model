@@ -6,14 +6,10 @@
 </p>
 <h3 align="center">contents</h3>
 <p align="center">
-<a  align="center" href="#Data-Gathering">Content</a>
- </p>
-<!--ts-->
-* Obtaining data
-   * [Data Gathering](#Data-Gathering)
-   * [Feature Engineering](#Feature-engineering)
-* [Initial Analysis](#Initial-Analysis)
-<!--te-->
+<a  align="center" href="#Data-Gathering">Data Gatherin</a>
+<a  align="center" href="#Feature-engineering">Feature Engineering</a>
+<a  align="center" href="#Initial-Analysis">Initial Analysis</a>
+</p>
 
 <a name="Data-Gathering"></a>
 <h2 align="center">Data Gathering</h2>
