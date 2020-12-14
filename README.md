@@ -14,7 +14,7 @@ This project aims to use machine learning to create a predictive model for the U
 <a name="Data-Gathering"></a>
 <h2 align="center">Data Gathering</h2>
 
-For the model to predict the National Demand it first required National Grid data to learn off. This information was gathered from National Grid ESO's data portal in the Demand data group Historic Demand Data set. For simplicity, only the 2020 set was used. The data was into 48, 30 minute periods comprising 1-day information on ND (national Demand). <br>
+The histoical National Energy demand was gathered from National Grid ESO's data portal, within the Demand' data group (https://data.nationalgrideso.com/demand/historic-demand-data). For simplicity, only the 2020 set was used. The data was into 48, 30 minute periods comprising 1-day information on ND (national Demand). <br>
 
 The second data set gathered was weather data. Gathering any historical information on this proved difficult as such only the London daily average temperature data was added to the model. This data was scraped from weather.com and cleaned in excel.<br>
 
