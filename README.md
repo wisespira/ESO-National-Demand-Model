@@ -10,7 +10,7 @@ This project aims to use machine learning to create a predictive model for the U
 <a  align="center" href="#Feature-engineering">Feature Engineering</a><br>
 <a  align="center" href="#Initial-Analysis">Initial Analysis</a><br>
 </p>
-
+<br><br>
 <a name="Data-Gathering"></a>
 <h2 align="center">Data Gathering</h2>
 
