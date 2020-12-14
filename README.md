@@ -4,9 +4,10 @@
  This project combines the National Gride ESO's Data Portal with national weather data to create a predictive model for national demand. To run the model use the National Demand Predictor.py file. 
 </p>
 <h3>contents</h3>
+
 <!--ts-->
    * [Introduction](#Introduction)
-   * [Inital Analysis](#Inital Analysis)
+   * [Inital Analysis](#Inital_Analysis)
 <!--te-->
 
 
