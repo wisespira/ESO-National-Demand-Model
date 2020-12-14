@@ -2,7 +2,7 @@
 <h1 align="center"> ESO National Demand Model</h1>
 
 <p align="center">
- This project combines the National Gride ESO's Data Portal with national weather data to create a predictive model for national demand. To run use the National Demand Predictor.py file. 
+ The aim of this project is to uses machine learning to create a predictive model for the UK's national energy demand. The data used in the model includes historical national demand infomation gathered from the National Gride ESO as well as national weather data. To run use the National Demand Predictor.py file. When selecting features 
 </p>
 <h3>contents</h3>
 
