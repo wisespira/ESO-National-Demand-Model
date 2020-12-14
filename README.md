@@ -30,7 +30,7 @@ A python function was created to map each day in the data set to being a weekday
 
 
 <p align="center">
- <img src="https://raw.githubusercontent.com/wisespira/ESO-National-Demand-Model/master/probability%20distribution%20of%20National%20Demand.png">
+ <img src="https://raw.githubusercontent.com/wisespira/ESO-National-Demand-Model/master/imgs/probability%20distribution%20of%20National%20Demand.png">
 </p>
 
 
