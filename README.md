@@ -4,8 +4,9 @@
 <p align="center">
  The aim of this project is to uses machine learning to create a predictive model for the UK's national energy demand. The data used in the model includes historical national demand infomation gathered from the National Grid ESO as well as national weather data. To run use the National Demand Predictor.py file. When selecting features 
 </p>
-<h3>contents</h3>
+<h3 align="center">contents</h3>
 
+<a href="#Data-Gathering">Content</a>
 <!--ts-->
 * Obtaining data
    * [Data Gathering](#Data-Gathering)
