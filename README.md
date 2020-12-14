@@ -6,14 +6,6 @@
 </p>
 <h3>contents</h3>
 
-<center>
-
-| This | Is | A | Table |
-| :--- | -- | - | ----: |
-| foo  | ba | r | elbaT |
-
-</center>
-
 <!--ts-->
    * [Introduction](#Introduction)
    * [Inital Analysis](#Inital_Analysis)
@@ -27,13 +19,3 @@
 </p>
 
 
-
-<center>
-
-| Tables   |      Are      |  Cool |
-|----------|:-------------:|------:|
-| col 1 is |  left-aligned | $1600 |
-| col 2 is |    centered   |   $12 |
-| col 3 is | right-aligned |    $1 |
-
-</center>
