@@ -1,5 +1,5 @@
 <center>
-<h2 align="center"> ESO-National-Demand-Model</h2>
+<h1 align="center"> ESO-National-Demand-Model</h1>
 
 <p align="center">
  This project combines the National Gride ESO's Data Portal with national weather data to create a predictive model for national demand. To run use the National Demand Predictor.py file. 
