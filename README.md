@@ -8,7 +8,7 @@ This project aims to use machine learning to create a predictive model for the U
 <p align="center">
 <a  align="center" href="#Data-Gathering">Data Gathering</a><br>
 <a  align="center" href="#Feature-engineering">Feature Engineering</a><br>
-<a  align="center" href="#Initial-Analysis">Initial Analysis</a><br>
+<a  align="center" href="#Initial-Analysis">Analysis</a><br>
 </p>
 <br><br>
 <a name="Data-Gathering"></a>
