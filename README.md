@@ -17,7 +17,7 @@ Tis project uses machine learning to create a predictive model for the UK's nati
 <a name="Data-Gathering"></a>
 <h2 align="center">Data Gathering</h2>
 
-The UK's histoical ND was gathered from National Grid ESO's data portal, within the Demand data group (https://data.nationalgrideso.com/demand/historic-demand-data). For simplicity, only the 2019 and 2020 set was used. The data came split into 48, 30 minute periods which comprised 1-day information on ND. <br>
+The UK's histoical ND was gathered from National Grid ESO's data portal (https://data.nationalgrideso.com/demand/historic-demand-data). For simplicity, only the 2019 and 2020 set was used. The data came split into 48, 30 minute periods which comprised 1-day information on ND. <br>
 
 Gathering large ammounts of historical weather information proved difficult as such only the London daily average temperature data was added. This data was scraped from weather.com and cleaned in excel.<br>
 
