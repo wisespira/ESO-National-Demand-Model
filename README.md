@@ -7,7 +7,7 @@ This project aims to use machine learning to create a predictive model for the U
 <h3 align="center">contents</h3>
 <p align="center">
 <a  href="#Data-Gathering">Data Gathering</a><br>
-<a  href="#Initial-Analysis">Analysis</a><br>
+<a  href="#Initial-Analysis">Data Analysis</a><br>
 <a  href="#Model-Design">Model Design</a><br>
 <a  href="#Performance">Performance</a><br>
 </p>
