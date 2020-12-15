@@ -30,7 +30,7 @@ A weekday/weekend data was added to the data set by looping through it with a py
 
 
 <p align="center">
- <img src="https://raw.githubusercontent.com/wisespira/ESO-National-Demand-Model/master/imgs/probability%20distribution%20of%20National%20Demand.png">
+ <img width="200" src="https://raw.githubusercontent.com/wisespira/ESO-National-Demand-Model/master/imgs/probability%20distribution%20of%20National%20Demand.png">
 </p>
 
 
