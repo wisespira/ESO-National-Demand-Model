@@ -1,9 +1,9 @@
 ## for data
 import pandas as pd
 import numpy as np
-from datetime import datetime
+from datetime import datetime,timedelta
 
-#******************ESO set-up***********************
+#******************ESO 2020 set-up***********************
 ESO_Data = pd.read_csv("./ESO and Weather Data/demand-data-2020.csv")
 cols = ["SETTLEMENT_DATE","ND"]
 ESO_Data = ESO_Data[cols]
@@ -36,15 +36,15 @@ for index, row in ESO_Data.iterrows():
 	#initilise date <--could be refactored
 	if(currentDate == ""):
 		currentDate = date
+	
+	if(currentDate==date):
+		daysAvgND = daysAvgND + row["ND"]
 		
-	if(date < datetime.strptime('01-SEP-2020', '%d-%b-%Y')):
-		if(currentDate==date):
-			daysAvgND = daysAvgND + row["ND"]
-		else:		
-			ESO_DataSubSet = ESO_DataSubSet.append({'SETTLEMENT_DATE': date.strftime('%d-%b-%Y'),'ND': str(daysAvgND/48),'Week_Day':getWeekDay()}, ignore_index=True)
-			daysAvgND = row["ND"]
-			currentDate = date
 	else:
+		ESO_DataSubSet = ESO_DataSubSet.append({'SETTLEMENT_DATE': currentDate.strftime('%d-%b-%Y'),'ND': str(daysAvgND/48),'Week_Day':getWeekDay()}, ignore_index=True)
+		daysAvgND = row["ND"]
+		currentDate = date
+	if(date > datetime.strptime('01-SEP-2020', '%d-%b-%Y')):
 		break	
 		
 print(ESO_DataSubSet.head())
@@ -61,9 +61,40 @@ weatherData = weatherData[cols]
 #This works as the dates are in line (both start on 1st JAN 2020, Should refactor <----
 ESO_Data = ESO_Data.join(weatherData["London Avg Temp"])
 ESO_Data["dailyND"] = ESO_Data.dailyND.astype(float)
-print(ESO_Data.dtypes)
-
 #data used for the rest of project
+ESO_Data = ESO_Data.rename(columns={'London Avg Temp':'London_Avg_Temp'})
+
+#******************ESO 2019 ND data***********************
+
+ESO_DataSubSet_2019 = pd.DataFrame(columns=cols)
+currentDate = ""
+ESO_Data_2019 = pd.read_csv("./ESO and Weather Data/demanddata_2019.csv")
+for index, row in ESO_Data_2019.iterrows():
+	date = datetime.strptime(row["SETTLEMENT_DATE"], '%d-%b-%Y')
+	#initilise date <--could be refactored
+	if(currentDate == ""):
+		currentDate = date
+		
+	if(date < datetime.strptime('01-SEP-2019', '%d-%b-%Y')):
+		if(currentDate==date):
+			daysAvgND = daysAvgND + row["ND"]
+		else:		
+			ESO_DataSubSet_2019 = ESO_DataSubSet_2019.append({'SETTLEMENT_DATE': date.strftime('%d-%b-%Y'),'ND': str(daysAvgND/48)}, ignore_index=True)
+			daysAvgND = row["ND"]
+			currentDate = date
+	else:
+		break	
+#print("2019 Data\n")
+#print(ESO_DataSubSet_2019.head())
+ESO_Data_2019 = ESO_DataSubSet_2019
+ESO_Data_2019 = ESO_DataSubSet_2019.rename(columns={"ND":"dailyND2019"})
+
+#ESO_Data = ESO_Data.join(ESO_Data_2019["dailyND2019"])
+
+
+#******************Done***********************
+
+#print(ESO_Data.dtypes)
 ESO_Data.to_csv('modelDataSet.csv')
 
 

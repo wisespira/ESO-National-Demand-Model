@@ -12,7 +12,7 @@ import statsmodels.api as sm
 ESO_Data = pd.read_csv("modelDataSet.csv")
 
 #******************Correlation Testing***********************
-correlationNDtemp = ESO_Data["dailyND"].corr(ESO_Data["London Avg Temp"])
+correlationNDtemp = ESO_Data["dailyND"].corr(ESO_Data["London_Avg_Temp"])
 correlationNDweekDay = ESO_Data["dailyND"].corr(ESO_Data["Week_Day"])
 
 print("Correlation between ND and London Temp " + str(correlationNDtemp))
@@ -27,22 +27,24 @@ weekDayAvg = ESO_Data[ESO_Data["Week_Day"]==1].dailyND.mean()
 print(ESO_Data[ESO_Data["Week_Day"]==0].dailyND.describe())  
 print(ESO_Data[ESO_Data["Week_Day"]==1].dailyND.describe())  
 
+#******************Correlation Testing***********************
+model = smf.ols('dailyND ~ Week_Day', data=ESO_Data).fit()
+table = sm.stats.anova_lm(model)
+p = table["PR(>F)"][0]
+coeff, p = None, round(p, 3)
+conclusion = "Correlated" if p < 0.05 else "Non-Correlated"
+print("Anova F: the variables are", conclusion, "(p-value: "+str(p)+")")
+
+
+
+
+
+
+
+
+
 
 plt.style.use('ggplot')
-
-
-bob = ESO_Data[ESO_Data["Week_Day"]==0]
-#x = ['Nuclear', 'Hydro']
-#energy = [weekEndAvg, weekDayAvg]
-
-#x_pos = [i for i, _ in enumerate(x)]
-
-#plt.bar(x_pos, energy, color='green')
-#plt.xlabel("Energy Source")
-#plt.ylabel("Energy Output (GJ)")
-#plt.title("Energy output from various fuel sources")
-
-#plt.xticks(x_pos, x)
 
 fig, ax = plt.subplots(nrows=2, ncols=2,  sharex=False, sharey=False)
 #fig.suptitle(x, fontsize=20)
@@ -52,17 +54,17 @@ WeekEndData = ESO_Data[ESO_Data["Week_Day"]==0].dailyND
 	
 
 tmp_dtf = pd.DataFrame(WeekEndData)
-tmp_dtf.boxplot(column="dailyND", ax=ax[1][0])
+tmp_dtf.boxplot(column="dailyND",vert=False, ax=ax[1][0])
 	
 
 tmp_dtf = pd.DataFrame(weekDayData)
-tmp_dtf.boxplot(column="dailyND", ax=ax[1][1])	
+tmp_dtf.boxplot(column="dailyND",vert=False, ax=ax[1][1])	
 
 ax[0][0].title.set_text('Avarange Daily ND\n on Weekends')
 variable = WeekEndData.fillna(WeekEndData.mean())
 breaks = np.quantile(variable, q=np.linspace(0, 1, 11))
 variable = variable[ (variable > breaks[0]) & (variable < breaks[10]) ]
-sns.distplot(variable, hist=True, kde=True, kde_kws={"shade": True}, ax=ax[0][0])
+sns.distplot(variable, hist=True, kde=True, kde_kws={"shade": True}, axlabel = "Daily Average ND",ax=ax[0][0])
 des = WeekEndData.describe()
 ax[0][0].axvline(des["25%"], ls='--')
 ax[0][0].axvline(des["mean"], ls='--')
@@ -72,11 +74,11 @@ des = round(des, 2).apply(lambda x: str(x))
 box = '\n'.join(("min: "+des["min"], "25%: "+des["25%"], "mean: "+des["mean"], "75%: "+des["75%"], "max: "+des["max"]))
 ax[0][0].text(0.95, 0.95, box, transform=ax[0][0].transAxes, fontsize=10, va='top', ha="right", bbox=dict(boxstyle='round', facecolor='white', alpha=1))
 
-ax[0][1].title.set_text('Avarange Daily ND\n on Week Days')
+ax[0][1].title.set_text('Avarange Daily ND\n on Weekdays')
 variable = weekDayData.fillna(weekDayData.mean())
 breaks = np.quantile(variable, q=np.linspace(0, 1, 11))
 variable = variable[ (variable > breaks[0]) & (variable < breaks[10]) ]
-sns.distplot(variable, hist=True, kde=True, kde_kws={"shade": True}, ax=ax[0][1])
+sns.distplot(variable, hist=True, kde=True, kde_kws={"shade": True}, axlabel = "Daily Average ND", ax=ax[0][1])
 des = weekDayData.describe()
 ax[0][1].axvline(des["25%"], ls='--')
 ax[0][1].axvline(des["mean"], ls='--')
@@ -97,12 +99,6 @@ plt.show()
 
 
 
-
-
-
-
-
-#ESO_Data = ESO_Data.rename(columns={"ND":"Y"})
 def probabilityDistributionGraph(data):
 	x = "dailyND"
 	fig, ax = plt.subplots(nrows=1, ncols=2,  sharex=False, sharey=False)
