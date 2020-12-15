@@ -2,7 +2,7 @@
 <h2 align="center">National Demand Model 📈</h2>
 
 <p align="center">
-This project aims to use machine learning to create a predictive model for the UK's national energy demand. The data used in the model include historical national demand information gathered from the National Grid ESO as well as Londons weather data. 
+This project aims to use machine learning to create a predictive model for the UK's national energy demand. The data used in the model include historical ND (national demand) information gathered from the National Grid ESO as well as Londons weather data. 
 </p>
 <h3 align="center">contents</h3>
 <p align="center">
@@ -14,7 +14,7 @@ This project aims to use machine learning to create a predictive model for the U
 <a name="Data-Gathering"></a>
 <h2 align="center">Data Gathering</h2>
 
-The UK's histoical National energy demand was gathered from National Grid ESO's data portal, within the Demand data group (https://data.nationalgrideso.com/demand/historic-demand-data). For simplicity, only the 2020 set was used. The data came split into 48, 30 minute periods which comprised 1-day information on ND (national Demand). <br>
+The UK's histoical ND was gathered from National Grid ESO's data portal, within the Demand data group (https://data.nationalgrideso.com/demand/historic-demand-data). For simplicity, only the 2020 set was used. The data came split into 48, 30 minute periods which comprised 1-day information on ND. <br>
 
 The second data set gathered was weather data. Gathering any historical information on this proved difficult as such only the London daily average temperature data was added to the model. This data was scraped from weather.com and cleaned in excel.<br>
 
