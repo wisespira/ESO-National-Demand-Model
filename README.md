@@ -23,7 +23,7 @@ To combine the two data sets the ND was averaged for each day and the weather fo
 <a name="Feature-engineering"></a>
 <h2 align="center">Feature engineering</h2>
 
-A python function was used to map each day in the data set as a weekday, given the value 1, or a weekend with the value 0.<br>
+A weekday/weekend (1/0) feature was added to the model data set<br>
 
 <a name="Initial-Analysis"></a>
 <h2 align="center">Initial Analysis</h2>
