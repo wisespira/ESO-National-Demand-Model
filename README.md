@@ -28,15 +28,15 @@ To combine the two data sets the ND was averaged for each day and the weather fo
 A weekday/weekend data was added to the data set by looping through it with a python function appending 1 for weekdays and 0 for weekends.<br>
 
 <a name="Initial-Analysis"></a>
-<h2 align="center">Analysis</h2>
-<h3 align="center">Datas Description</h3>
+<h2 align="center">Data Analysis</h2>
+<p align="center">
+ <img width="200" src="https://raw.githubusercontent.com/wisespira/ESO-National-Demand-Model/master/imgs/probability%20distribution%20of%20National%20Demand.png">
+</p>
 <a name="Feature-selection"></a>
 <h3 align="center">Feature Selection</h3>
 
 
-<p align="center">
- <img width="200" src="https://raw.githubusercontent.com/wisespira/ESO-National-Demand-Model/master/imgs/probability%20distribution%20of%20National%20Demand.png">
-</p>
+
 
 <a name="Model-Design"></a>
 <h2 align="center">Model Design</h2>
