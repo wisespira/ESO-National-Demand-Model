@@ -8,6 +8,8 @@ This project aims to use machine learning to create a predictive model for the U
 <p align="center">
 <a  href="#Data-Gathering">Data Gathering</a><br>
 <a  href="#Initial-Analysis">Analysis</a><br>
+<a  href="#Model-Design">Model Design</a><br>
+<a  href="#Performance">Performance</a><br>
 </p>
 <br><br>
 <a name="Data-Gathering"></a>
@@ -33,5 +35,11 @@ A weekday/weekend data was added to the data set by looping through it with a py
  <img width="200" src="https://raw.githubusercontent.com/wisespira/ESO-National-Demand-Model/master/imgs/probability%20distribution%20of%20National%20Demand.png">
 </p>
 
+<a name="Model-Design"></a>
+<h2 align="center">Model Design</h2>
+
+
+<a name="Performance"></a>
+<h2 align="center">Performance</h2>
 
 
