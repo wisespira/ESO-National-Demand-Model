@@ -25,7 +25,7 @@ To combine the two data sets the ND was averaged for each day then the weather d
 <a name="Data-Engineering"></a>
 <h3 align="center">Data Engineering</h3>
 
-A weekday/weekend data was added to the data set by looping through it with a python function appending 1 for weekdays and 0 for weekends.<br>
+Weekday/weekend data was added to the data set with a python function by looping through the set appending 1 for weekdays and 0 for weekends.<br>
 
 <a name="Initial-Analysis"></a>
 <h2 align="center">Data Analysis</h2>
