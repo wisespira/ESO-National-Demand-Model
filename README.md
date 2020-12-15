@@ -26,7 +26,7 @@ To combine the two data sets the ND was averaged for each day and the weather fo
 A weekday/weekend (1/0) feature was added to the model data set.<br>
 
 <a name="Initial-Analysis"></a>
-<h2 align="center">Initial Analysis</h2>
+<h2 align="center">Analysis</h2>
 
 
 <p align="center">
