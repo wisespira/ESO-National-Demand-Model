@@ -13,7 +13,7 @@ Tis project uses machine learning to create a predictive model for the UK's nati
 <a  href="#Model-Design">Model Design</a><br>
 <a  href="#Performance">Performance</a><br>
 </p>
-<br><br>
+<br>
 <a name="Data-Gathering"></a>
 <h2 align="center">Data Gathering</h2>
 
