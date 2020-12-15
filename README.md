@@ -7,7 +7,6 @@ This project aims to use machine learning to create a predictive model for the U
 <h3 align="center">contents</h3>
 <p align="center">
 <a  href="#Data-Gathering">Data Gathering</a><br>
-<a   href="#Feature-engineering">Feature Engineering</a><br>
 <a  href="#Initial-Analysis">Analysis</a><br>
 </p>
 <br><br>
@@ -19,9 +18,7 @@ The UK's histoical ND was gathered from National Grid ESO's data portal, within 
 Gathering large ammounts of historical weather information proved difficult as such only the London daily average temperature data was added. This data was scraped from weather.com and cleaned in excel.<br>
 
 To combine the two data sets the ND was averaged for each day and the weather for that day was appended. <br>
-
-<a name="Feature-engineering"></a>
-<h2 align="center">Feature engineering</h2>
+<h3 align="center">Data Engineering</h3>
 
 A weekday/weekend (1/0) feature was added to the model data set.<br>
 
