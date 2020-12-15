@@ -27,6 +27,9 @@ A weekday/weekend (1/0) feature was added to the model data set.<br>
 
 <a name="Initial-Analysis"></a>
 <h2 align="center">Analysis</h2>
+<h3 align="center">Datas Description</h3>
+
+<h3 align="center">Feature selection</h3>
 
 
 <p align="center">
