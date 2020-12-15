@@ -21,7 +21,7 @@ The UK's histoical ND was gathered from National Grid ESO's data portal (https:/
 
 Gathering large ammounts of historical weather information proved difficult as such only the London daily average temperature data was added. This data was scraped from 'The Weather Channel' (https://weather.com/en-GB/weather/monthly/) and then cleaned in excel (see 'ESO and Weather Data/data from weather.com.xlsx' ).<br>
 
-To combine the two data sets the ND was averaged for each day and the weather for that day was appended. <br>
+To combine the two data sets the ND was averaged for each day then the weather data was joined. <br>
 <a name="Data-Engineering"></a>
 <h3 align="center">Data Engineering</h3>
 
