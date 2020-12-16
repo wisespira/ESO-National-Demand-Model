@@ -34,7 +34,7 @@ Weekday/weekend data was added to the data set with a python function by looping
 </p>
 <a name="Feature-selection"></a>
 <h3 align="center">Feature Selection</h3>
-All veriables were corrilation and one-way ANOVA tested against the 2020 ND. From the results show below all but the weelday/weekend veriable were shown to have predictive qualities (results below).  <br>
+All veriables were corrilation and one-way ANOVA tested against the 2020 ND. From the results show below all but the weelday/weekend veriable were shown to have predictive qualities (results below). <br>  <br>
  <p align="center">
  <img src="https://raw.githubusercontent.com/wisespira/ESO-National-Demand-Model/master/imgs/cor%26pvalueExcel.png">
 </p>
