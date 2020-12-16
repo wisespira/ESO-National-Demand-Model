@@ -35,8 +35,7 @@ Weekday/weekend data was added to the data set with a python function by looping
 <a name="Feature-selection"></a>
 <h3 align="center">Feature Selection</h3>
 Although both 2019 and 2019 Ajusted both explanatory variables to remove any potential multicollinearity problems only the 2019 Ajustend was used as it had the lowest p-value.  
-
-
+ <img src="https://raw.githubusercontent.com/wisespira/ESO-National-Demand-Model/master/imgs/cor%26pvalueExcel.png">
 
 <a name="Model-Design"></a>
 <h2 align="center">Model Design</h2>
