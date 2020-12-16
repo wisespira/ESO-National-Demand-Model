@@ -69,27 +69,28 @@ ESO_Data = ESO_Data.rename(columns={'London Avg Temp':'London_Avg_Temp'})
 ESO_DataSubSet_2019 = pd.DataFrame(columns=cols)
 currentDate = ""
 ESO_Data_2019 = pd.read_csv("./ESO and Weather Data/demanddata_2019.csv")
+
 for index, row in ESO_Data_2019.iterrows():
 	date = datetime.strptime(row["SETTLEMENT_DATE"], '%d-%b-%Y')
 	#initilise date <--could be refactored
 	if(currentDate == ""):
 		currentDate = date
+	
+	if(currentDate==date):
+		daysAvgND = daysAvgND + row["ND"]
 		
-	if(date < datetime.strptime('01-SEP-2019', '%d-%b-%Y')):
-		if(currentDate==date):
-			daysAvgND = daysAvgND + row["ND"]
-		else:		
-			ESO_DataSubSet_2019 = ESO_DataSubSet_2019.append({'SETTLEMENT_DATE': date.strftime('%d-%b-%Y'),'ND': str(daysAvgND/48)}, ignore_index=True)
-			daysAvgND = row["ND"]
-			currentDate = date
 	else:
+		ESO_DataSubSet_2019 = ESO_DataSubSet_2019.append({'SETTLEMENT_DATE': currentDate.strftime('%d-%b-%Y'),'ND': str(daysAvgND/48)}, ignore_index=True)
+		daysAvgND = row["ND"]
+		currentDate = date
+	if(date > datetime.strptime('01-SEP-2020', '%d-%b-%Y')):
 		break	
 #print("2019 Data\n")
 #print(ESO_DataSubSet_2019.head())
 ESO_Data_2019 = ESO_DataSubSet_2019
 ESO_Data_2019 = ESO_DataSubSet_2019.rename(columns={"ND":"dailyND2019"})
 
-#ESO_Data = ESO_Data.join(ESO_Data_2019["dailyND2019"])
+ESO_Data = ESO_Data.join(ESO_Data_2019["dailyND2019"])
 
 
 #******************Done***********************
