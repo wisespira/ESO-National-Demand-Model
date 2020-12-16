@@ -25,7 +25,7 @@ To combine the two data sets the ND was averaged for each day then the weather d
 <a name="Data-Engineering"></a>
 <h3 align="center">Data Engineering</h3>
 
-Weekday/weekend data was added to the data set with a python function by looping through the set appending 1 for weekdays and 0 for weekends.<br>
+Weekday/weekend data was added to the data set with a python function by looping through the set appending 1 for weekdays and 0 for weekends. An ajusted copy of the 2019 data was also added inwich all data was sifted up one day to account for the day of the week shift created by the year change.<br>
 
 <a name="Initial-Analysis"></a>
 <h2 align="center">Data Analysis</h2>
@@ -34,7 +34,7 @@ Weekday/weekend data was added to the data set with a python function by looping
 </p>
 <a name="Feature-selection"></a>
 <h3 align="center">Feature Selection</h3>
-
+Although both 2019 and 2019 Ajusted both explanatory variables to remove any potential multicollinearity problems only the 2019 Ajustend was used as it had the lowest p-value.  
 
 
 
