@@ -94,14 +94,17 @@ ESO_Data = ESO_Data.join(ESO_Data_2019["dailyND2019"])
 
 #******************ESO 2019 ND Data Ajusted***********************
 
-ESO_Data_2019Aju = ESO_Data_2019.rename(columns={"ND":"dailyND2019Adj"})
+ESO_Data_2019Aju = ESO_Data_2019.rename(columns={"dailyND2019":"dailyND2019Adj"})
 ESO_Data_2019Aju = ESO_Data_2019Aju[1:]
-ESO_Data = ESO_Data.join(ESO_Data_2019Aju["dailyND2019Adj"])
+ESO_Data_2019Aju = ESO_Data_2019Aju["dailyND2019Adj"]
+ESO_Data_2019Aju.index = np.arange(0,len(ESO_Data_2019Aju))
+print(ESO_Data_2019Aju.head())
+ESO_Data = ESO_Data.join(ESO_Data_2019Aju)
 
 
 #******************Done***********************
 
-print(ESO_Data.dtypes)
+#print(ESO_Data.dtypes)
 print(ESO_Data.head())
 ESO_Data.to_csv('modelDataSet.csv')
 

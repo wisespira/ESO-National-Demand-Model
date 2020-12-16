@@ -27,7 +27,7 @@ correlation2020_2019Adj = ESO_Data["dailyND"].corr(ESO_Data["dailyND2019Adj"])
 print("Correlation between ND and London Temp " + str(correlationNDtemp))
 print("Correlation between ND and London Weekday " + str(correlationNDweekDay))
 print("Correlation between ND 2020 and ND 2019 " + str(correlation2020_2019))
-print("Correlation between ND 2020 and ND 2019 " + str(correlation2020_2019Adj))
+print("Correlation between ND 2020 and ND 2019 Adj " + str(correlation2020_2019Adj))
 
 weekEndAvg = ESO_Data[ESO_Data["Week_Day"]==0].dailyND.mean()
 weekDayAvg = ESO_Data[ESO_Data["Week_Day"]==1].dailyND.mean()
