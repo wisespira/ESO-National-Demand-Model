@@ -17,7 +17,7 @@ weekDay = 0
 
 dayOfWeek = 3
 
-#Ued to create the weekDay feature
+#Ued to create the weekDay data
 def getWeekDay():
 	global dayOfWeek
 	if(dayOfWeek<=4):
@@ -47,7 +47,7 @@ for index, row in ESO_Data.iterrows():
 	if(date > datetime.strptime('01-SEP-2020', '%d-%b-%Y')):
 		break	
 		
-print(ESO_DataSubSet.head())
+#print(ESO_DataSubSet.head())
 ESO_Data = ESO_DataSubSet
 ESO_Data = ESO_Data.rename(columns={"ND":"dailyND"})
 
@@ -64,7 +64,7 @@ ESO_Data["dailyND"] = ESO_Data.dailyND.astype(float)
 #data used for the rest of project
 ESO_Data = ESO_Data.rename(columns={'London Avg Temp':'London_Avg_Temp'})
 
-#******************ESO 2019 ND data***********************
+#******************ESO 2019 ND Data***********************
 
 ESO_DataSubSet_2019 = pd.DataFrame(columns=cols)
 currentDate = ""
@@ -89,13 +89,20 @@ for index, row in ESO_Data_2019.iterrows():
 #print(ESO_DataSubSet_2019.head())
 ESO_Data_2019 = ESO_DataSubSet_2019
 ESO_Data_2019 = ESO_DataSubSet_2019.rename(columns={"ND":"dailyND2019"})
-
 ESO_Data = ESO_Data.join(ESO_Data_2019["dailyND2019"])
+
+
+#******************ESO 2019 ND Data Ajusted***********************
+
+ESO_Data_2019Aju = ESO_Data_2019.rename(columns={"ND":"dailyND2019Adj"})
+ESO_Data_2019Aju = ESO_Data_2019Aju[1:]
+ESO_Data = ESO_Data.join(ESO_Data_2019Aju["dailyND2019Adj"])
 
 
 #******************Done***********************
 
-#print(ESO_Data.dtypes)
+print(ESO_Data.dtypes)
+print(ESO_Data.head())
 ESO_Data.to_csv('modelDataSet.csv')
 
 

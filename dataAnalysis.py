@@ -10,39 +10,48 @@ import statsmodels.formula.api as smf
 import statsmodels.api as sm
 
 ESO_Data = pd.read_csv("modelDataSet.csv")
+#******************Describing Data***********************
+print("******************Describing Data***********************")
+print(ESO_Data[ESO_Data["Week_Day"]==0].dailyND.describe())  
+print(ESO_Data[ESO_Data["Week_Day"]==1].dailyND.describe())  
+print("")
 
 #******************Correlation Testing***********************
+print("******************Correlation Testing***********************")
 correlationNDtemp = ESO_Data["dailyND"].corr(ESO_Data["London_Avg_Temp"])
 correlationNDweekDay = ESO_Data["dailyND"].corr(ESO_Data["Week_Day"])
+correlation2020_2019 = ESO_Data["dailyND"].corr(ESO_Data["dailyND2019"])
+correlation2020_2019Adj = ESO_Data["dailyND"].corr(ESO_Data["dailyND2019Adj"])
+
 
 print("Correlation between ND and London Temp " + str(correlationNDtemp))
 print("Correlation between ND and London Weekday " + str(correlationNDweekDay))
+print("Correlation between ND 2020 and ND 2019 " + str(correlation2020_2019))
+print("Correlation between ND 2020 and ND 2019 " + str(correlation2020_2019Adj))
 
 weekEndAvg = ESO_Data[ESO_Data["Week_Day"]==0].dailyND.mean()
 weekDayAvg = ESO_Data[ESO_Data["Week_Day"]==1].dailyND.mean()
-
+print("")
 #print("Week End average demand " +  str(weekEndAvg))
 #print("Week Day average demand " +  str(weekDayAvg))
 
-print(ESO_Data[ESO_Data["Week_Day"]==0].dailyND.describe())  
-print(ESO_Data[ESO_Data["Week_Day"]==1].dailyND.describe())  
+#******************P-Value Testing***********************
+print("******************P-Value Testing***********************")
+def getPvalue(feature,data):
+	
+	model = smf.ols('dailyND ~ ' + feature, data=ESO_Data).fit()
+	table = sm.stats.anova_lm(model)
+	p = table["PR(>F)"][0]
+	coeff, p = None, round(p, 3)
+	conclusion = "Correlated" if p < 0.05 else "Non-Correlated"
+	print("Anova F: " +  feature + " is ", conclusion, "(p-value: "+str(p)+")")
 
-#******************Correlation Testing***********************
-model = smf.ols('dailyND ~ Week_Day', data=ESO_Data).fit()
-table = sm.stats.anova_lm(model)
-p = table["PR(>F)"][0]
-coeff, p = None, round(p, 3)
-conclusion = "Correlated" if p < 0.05 else "Non-Correlated"
-print("Anova F: the variables are", conclusion, "(p-value: "+str(p)+")")
-
-
-
-
-
-
-
-
-
+	
+getPvalue('London_Avg_Temp',ESO_Data)
+getPvalue('Week_Day',ESO_Data)
+getPvalue('dailyND2019',ESO_Data)
+getPvalue('dailyND2019Adj',ESO_Data)
+print("")
 
 plt.style.use('ggplot')
 
