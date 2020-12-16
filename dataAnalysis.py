@@ -53,6 +53,8 @@ getPvalue('dailyND2019',ESO_Data)
 getPvalue('dailyND2019Adj',ESO_Data)
 print("")
 
+
+#******************Graphs***********************
 plt.style.use('ggplot')
 
 fig, ax = plt.subplots(nrows=2, ncols=2,  sharex=False, sharey=False)
