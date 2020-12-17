@@ -2,7 +2,7 @@
 <h2 align="center">National Demand Model 📈</h2>
 
 <p align="center">
-This project uses machine learning to create a predictive model for England and Wales national energy demand. Currently the model is happly sitting with arround a 8% error in predictions.The data used includes historical ND (national demand) data gathered from the National Grid ESO, as well as Londons weather scraped from weather.com to make its predictions. There is still much work to be done and as such this readme conatins both an account of the project as well notes for further reaseach. 
+This project uses machine learning to create a predictive model for England and Wales national energy demand. The model is currently happly sitting with arround a 8% error in predictions.The data used includes historical ND (national demand) data gathered from the National Grid ESO, as well as Londons weather scraped from weather.com to make its predictions. There is still much work to be done and as such this readme conatins both an account of the project as well notes for further reaseach. 
 </p>
 <h3 align="center">contents</h3>
 <p align="center">
