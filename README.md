@@ -43,7 +43,7 @@ To begin with it was usfull to just have a brows through the data. The avarage d
 <img width="700" src="https://raw.githubusercontent.com/wisespira/ESO-National-Demand-Model/master/imgs/AverageNDEachDay2020.png">
  </p>
  
-The Average ND throughout the year gave some insight into this showing a strong ling between the a noticable decline in ND after the colder months. Anouther very interesting feature is the pattern of one off low ND followed by a few days of high ND.
+The Average ND throughout the year gave some insight into the right skew showing a strong potential link between ND colder months and seasions. Anouther very interesting feature is the pattern of one off low ND followed by a few days of high ND.
  
  
 <p align="center">
@@ -56,7 +56,7 @@ To maybe gain insight into some of the observations It was usfull to compare som
 <img width="700" src="https://raw.githubusercontent.com/wisespira/ESO-National-Demand-Model/master/imgs/2019adjVS2019.png">
 </p>
 
-An 
+The assumption proved correct that the days of the week were more relivent in general. However, It would be interesting to look for dates which the calender aligned set did better in, this may highlight other important elements.  
 
 <a name="Feature-selection"></a>
 <h3 align="center">Feature Selection</h3>
