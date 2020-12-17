@@ -13,6 +13,7 @@ Tis project uses machine learning to create a predictive model for England and W
 <a  href="#Model-Design">Model Design</a><br>
 <a  href="#Model-Design">Preprocessing</a><br>
 <a  href="#Performance">Performance</a><br>
+<a  href="#Summary">Summary</a><br>
 </p>
 <br>
 <a name="Data-Gathering"></a>
@@ -53,4 +54,5 @@ Although both '2019 ND' and '2019 ND Ajusted' were explanatory variables to remo
 <a name="Performance"></a>
 <h2 align="center">Performance</h2>
 
-
+<a name="Summary"></a>
+<h2 align="center">Summary</h2>
