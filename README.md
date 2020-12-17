@@ -46,9 +46,9 @@ To begin with it was usfull to just have a brows through the data. The avarage d
 The Average ND throughout the year gave some insight into this showing a strong ling between the a noticable decline in ND after the colder months. Anouther very interesting feature is the pattern of one off low ND followed by a few days of high ND.
  
  
-
+<p align="center">
 <img width="700" src="https://raw.githubusercontent.com/wisespira/ESO-National-Demand-Model/master/imgs/weekdayWeekendComparison.png">
-   
+  </p>  
 
 To maybe gain insight into some of the observations It was usfull to compare some of the other data for similar trends. 
 
