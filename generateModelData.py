@@ -30,7 +30,7 @@ def getWeekDay():
 		dayOfWeek=0
 		return 0
 		
-#Take Avarage Demand for each SETTLEMENT_DATE
+#Take average Demand for each SETTLEMENT_DATE
 for index, row in ESO_Data.iterrows():
 	date = datetime.strptime(row["SETTLEMENT_DATE"], '%d-%b-%Y')
 	#initilise date <--could be refactored

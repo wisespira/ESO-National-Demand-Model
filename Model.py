@@ -11,17 +11,111 @@ import statsmodels.api as sm
 ## for machine learning
 from sklearn import model_selection, preprocessing, feature_selection, ensemble, linear_model, metrics, decomposition
 ## for explainer
-from lime import lime_tabular
 from datetime import datetime
 from sklearn.linear_model import LinearRegression
 
-ESO_Data = pd.read_csv("modelDataSet.csv", index=False)
+plt.style.use('ggplot')
+#plt.style.use('dark_background')
+ESO_Data = pd.read_csv("modelDataSet.csv")
 ESO_Data = ESO_Data.rename(columns={"dailyND":"Y"})
+##Feature Selection 
 
+ESO_Data = ESO_Data.drop('dailyND2019', 1)
+ESO_Data = ESO_Data.drop('Week_Day', 1)
+ESO_Data = ESO_Data.drop('SETTLEMENT_DATE', 1)
+ESO_Data = ESO_Data.drop('Unnamed: 0', 1)
+
+print(ESO_Data.head())
+##Preprocessing 
+##Should scale the data
+
+## scale X
+ESO_Data_scalerX = preprocessing.RobustScaler(quantile_range=(25.0, 75.0))
+X = ESO_Data_scalerX.fit_transform(ESO_Data.drop("Y", axis=1))
+ESO_Data_scaled= pd.DataFrame(X, columns=ESO_Data.drop("Y", axis=1).columns, index=ESO_Data.index)
+## scale Y
+ESO_Data_scalerY = preprocessing.RobustScaler(quantile_range=(25.0, 75.0))
+ESO_Data_scaled["Y"] = ESO_Data_scalerY.fit_transform(ESO_Data["Y"].values.reshape(-1,1))
+#print(dtf_scaled.head())
+
+#ESO_Data = dtf_scaled
+
+
+
+##*************Set-Up***************
 ## split data
-ESO_train, ESO_test = model_selection.train_test_split(ESO_Data, 
-                      test_size=0.3)
+ESO_train, ESO_test = model_selection.train_test_split(ESO_Data,test_size=0.3)
 ## print info
-print("X_train shape:", ESO_train.drop("Y",axis=1).shape, "| X_test shape:", ESO_test.drop("Y",axis=1).shape)
-print("y_train mean:", round(np.mean(ESO_train["Y"]),2), "| y_test mean:", round(np.mean(ESO_test["Y"]),2))
-print(ESO_train.shape[1], "features:", ESO_train.drop("Y",axis=1).columns.to_list())
+
+X_names = ['London_Avg_Temp', 'dailyND2019Adj']
+X_train = ESO_train[X_names].values
+y_train = ESO_train["Y"].values
+X_test = ESO_test[X_names].values
+y_test = ESO_test["Y"].values
+
+## call model
+model = linear_model.LinearRegression()
+## K fold validation
+scores = []
+#Breaks training data into 5 chunks and shuffels them 
+cv = model_selection.KFold(n_splits=5, shuffle=True)
+fig = plt.figure()
+i = 1
+colours = ["#ffbe0b","#fb5607","#ff006e","#8338ec","#3a86ff"]
+##*************train***************
+#Loop through the 5 chunks fitting the model and making a prediction
+for train, test in cv.split(X_train, y_train):
+    model = model.fit(X_train[train],y_train[train])
+    prediction = model.predict(X_train[test])
+    trueValue = y_train[test]
+    score = metrics.r2_score(trueValue, prediction)
+    scores.append(score)
+	#ittrativly add the scatter plots
+    plt.scatter(prediction, trueValue , lw=2, alpha=0.75,label='Fold %d (R2 = %0.2f)' % (i,score), c = colours[i-1])
+    print(model.coef_)
+    i += 1
+plt.plot([min(y_train),max(y_train)], [min(y_train),max(y_train)],linestyle='--', lw=2, color='#013220')
+plt.xlabel('Predicted Value')
+plt.ylabel('True Value')
+plt.title('K-Fold Validation on training set')
+plt.legend()
+#plt.show()
+
+##*************Test***************
+predicted = model.predict(X_test)
+print(model.coef_)
+
+## Key Performance Indicators
+print("R2 (explained variance):", round(metrics.r2_score(y_test, predicted), 2))
+print("Mean Absolute Perc Error (Σ(|y-pred|/y)/n):", round(np.mean(np.abs((y_test-predicted)/predicted)), 2))
+print("Mean Absolute Error (Σ|y-pred|/n):", "{:,.0f}".format(metrics.mean_absolute_error(y_test, predicted)))
+print("Root Mean Squared Error (sqrt(Σ(y-pred)^2/n)):", "{:,.0f}".format(np.sqrt(metrics.mean_squared_error(y_test, predicted))))
+## residuals
+residuals = y_test - predicted
+max_error = max(residuals) if abs(max(residuals)) > abs(min(residuals)) else min(residuals)
+max_idx = list(residuals).index(max(residuals)) if abs(max(residuals)) > abs(min(residuals)) else list(residuals).index(min(residuals))
+max_true, max_pred = y_test[max_idx], predicted[max_idx]
+print("Max Error:", "{:,.0f}".format(max_error))
+
+
+## Plot predicted vs true Vale
+fig, ax = plt.subplots(nrows=1, ncols=2)
+from statsmodels.graphics.api import abline_plot
+ax[0].scatter(predicted, y_test, color="black")
+abline_plot(intercept=0, slope=1, color=colours[0], ax=ax[0])
+ax[0].vlines(x=max_pred, ymin=max_true, ymax=max_true-max_error, color=colours[0], linestyle='--', alpha=0.7, label="max error")
+ax[0].grid(True)
+ax[0].set(xlabel="Predicted", ylabel="True Value", title="Predicted vs True")
+ax[0].legend()
+    
+## Plot predicted vs residuals
+ax[1].scatter(predicted, residuals, color="red")
+ax[1].vlines(x=max_pred, ymin=0, ymax=max_error, color=colours[1], linestyle='--', alpha=0.7, label="max error")
+ax[1].grid(True)
+ax[1].set(xlabel="Predicted", ylabel="Residuals", title="Predicted vs Residuals")
+ax[1].hlines(y=0, xmin=np.min(predicted), xmax=np.max(predicted))
+ax[1].legend()
+plt.show()
+
+
+
