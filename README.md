@@ -27,7 +27,7 @@ To combine the two data sets the ND was averaged for each day then the weather d
 <a name="Data-Engineering"></a>
 <h3 align="center">Data Engineering</h3>
 
-Weekday/weekend data was added to the data set with a python function by looping through the set appending 1 for weekdays and 0 for weekends. An ajusted copy of the 2019 data was also added inwich all data was sifted up one day to account for the day of the week shift created by the year change.<br>
+Weekday/weekend data was added to the data set with a python function by looping through the set appending 1 for weekdays and 0 for weekends. An ajusted copy of the 2019 data was also added inwich all data was sifted up one day. The reasoning for the ajusted copy was an assumption that day of the week would be more relivent then the date. <br>
 
 <a name="Initial-Analysis"></a>
 <h2 align="center">Data Analysis</h2>
@@ -50,11 +50,13 @@ The Average ND throughout the year gave some insight into this showing a strong 
 <img width="700" src="https://raw.githubusercontent.com/wisespira/ESO-National-Demand-Model/master/imgs/weekdayWeekendComparison.png">
   </p>  
 
-To maybe gain insight into some of the observations It was usfull to compare some of the other data for similar trends. 
+To maybe gain insight into some of the observations It was usfull to compare some of the other data for similar trends. Although the two data sets looked near identical the weekdays did have a notably higher upper quartile giving weekdays a bigger impact on the right skew. It will be nessisary to beak the data down into days to find further insight.
 
  <p align="center">
 <img width="700" src="https://raw.githubusercontent.com/wisespira/ESO-National-Demand-Model/master/imgs/2019adjVS2019.png">
 </p>
+
+An 
 
 <a name="Feature-selection"></a>
 <h3 align="center">Feature Selection</h3>
