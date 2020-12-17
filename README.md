@@ -64,7 +64,7 @@ All veriables were corrilation and one-way ANOVA tested against the 2020 ND. Fro
  <p align="center">
  <img src="https://raw.githubusercontent.com/wisespira/ESO-National-Demand-Model/master/imgs/cor%26pvalueExcel.png">
 </p>
-Although both '2019 ND' and '2019 ND Ajusted' were explanatory variables to remove any potential multicollinearity problems only the 2019 Ajustend was used as it had the lowest p-value. 
+Although both '2019 ND' and '2019 ND Ajusted' were explanatory variables to remove any potential multicollinearity problems only the 2019 Ajustend was used as it had the higher corilation. 
 <a name="Model-Design"></a>
 <h2 align="center">Model Design</h2>
 <a name="Preprocessing"></a>
