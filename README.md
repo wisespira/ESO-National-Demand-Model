@@ -48,7 +48,7 @@ The Average ND throughout the year gave some insight into this showing a strong 
 <img width="700" src="https://raw.githubusercontent.com/wisespira/ESO-National-Demand-Model/master/imgs/weekdayWeekendComparison.png">
     </p>
     
-    <p align="center">
+ <p align="center">
 <img width="700" src="https://raw.githubusercontent.com/wisespira/ESO-National-Demand-Model/master/imgs/2019adjVS2019.png">
 </p>
 
