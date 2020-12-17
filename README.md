@@ -32,9 +32,9 @@ Weekday/weekend data was added to the data set with a python function by looping
 <a name="Initial-Analysis"></a>
 <h2 align="center">Data Analysis</h2>
 <p align="center"
-<img width="700" src="https://raw.githubusercontent.com/wisespira/ESO-National-Demand-Model/master/imgs/probability%20distribution%20of%20National%20Demand.png">
+<img width="700" src="https://raw.githubusercontent.com/wisespira/ESO-National-Demand-Model/master/imgs/probability%20distribution%20of%20National%20Demand.png"><br>
 To begin with it was usfull to just have a brows through the data. The avarage daily demand was right skewed, posibly due to infrequent events like holidays/sporting events or to the short period of the year people require heating, it may even be due to the data not featureing the full year. 
-<img width="700" src="https://raw.githubusercontent.com/wisespira/ESO-National-Demand-Model/master/imgs/AverageNDEachDay2020.png">
+<img width="700" src="https://raw.githubusercontent.com/wisespira/ESO-National-Demand-Model/master/imgs/AverageNDEachDay2020.png"><br>
 The Average ND throughout the year gave some insight into this showing a strong ling between the a noticable decline in ND after the colder months. Anouther very interesting feature is the pattern of one off low ND followed by a few days of high ND.
 <img width="700" src="https://raw.githubusercontent.com/wisespira/ESO-National-Demand-Model/master/imgs/weekdayWeekendComparison.png">
 <img width="700" src="https://raw.githubusercontent.com/wisespira/ESO-National-Demand-Model/master/imgs/2019adjVS2019.png">
