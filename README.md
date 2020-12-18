@@ -66,6 +66,7 @@ All veriables were corrilation and one-way ANOVA tested against the 2020 ND. Fro
 </p>
 Although both '2019 ND' and '2019 ND Ajusted' were explanatory variables to remove any potential multicollinearity problems only the 2019 Ajustend was used as it had the higher corilation. 
 <a name="Model-Design"></a>
+As I established a liniar relationship between my dependent and all my independent veriables a MLR model was chosen. 
 <h2 align="center">Model Design</h2>
 <a name="Preprocessing"></a>
 <h3 align="center">Preprocessing</h3>
