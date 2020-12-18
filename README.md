@@ -2,7 +2,7 @@
 <h2 align="center">National Demand Model 📈</h2>
 
 <p align="center">
-This project uses machine learning to create a predictive model for England and Wales national energy demand. The model is currently happly sitting with arround an 8% error in predictions. The data used includes historical ND (national demand) data gathered from the National Grid ESO, as well as Londons weather scraped from weather.com to make its predictions. There is still much work to be done and as such this readme conatins both an account of the project as well notes for further reaseach. 
+This project uses machine learning to create a predictive model for England and Wales national energy demand. The model is currently happly sitting with arround an 8% error in predictions. The data used includes historical ND (national demand) data gathered from the National Grid ESO, as well as Londons daily avarage temperature scraped from weather.com to make its predictions. There is still much work to be done and as such this readme conatins both an account of the project as well notes for further reaseach. 
 </p>
 <h3 align="center">contents</h3>
 <p align="center">
@@ -21,7 +21,7 @@ This project uses machine learning to create a predictive model for England and 
 
 England and Wales histoical ND was gathered from National Grid ESO's data portal (https://data.nationalgrideso.com/demand/historic-demand-data). For simplicity, only the 2019 and 2020 set was used. The data came split into 48, 30 minute periods which comprised 1-days information on ND. <br>
 
-Gathering large ammounts of historical weather information proved difficult as such only the London daily average temperature data was added. This data was scraped from 'The Weather Channel' (https://weather.com/en-GB/weather/monthly/) and then cleaned in excel (see 'ESO and Weather Data/data from weather.com.xlsx' ).<br>
+Gathering large ammounts of historical weather information proved difficult, as such only the London daily average temperature data was added. This data was scraped from 'The Weather Channel' (https://weather.com/en-GB/weather/monthly/) and then cleaned in excel (see 'ESO and Weather Data/data from weather.com.xlsx' ).<br>
 
 To combine the two data sets the ND was averaged for each day then the weather data was joined. <br>
 <a name="Data-Engineering"></a>
