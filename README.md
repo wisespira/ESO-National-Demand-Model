@@ -74,5 +74,7 @@ As I established a liniar relationship between my dependent and all my independe
 <a name="Performance"></a>
 <h2 align="center">Performance</h2>
 
+Draw prediction graph against the actual graph 
+
 <a name="Summary"></a>
 <h2 align="center">Summary</h2>
