@@ -43,7 +43,7 @@ To begin with it was usfull to just have a brows through the data. The avarage d
 <img width="700" src="https://raw.githubusercontent.com/wisespira/ESO-National-Demand-Model/master/imgs/AverageNDEachDay2020.png">
  </p>
  
-The Average ND throughout the year gave some insight into the right skew showing a strong potential link between ND colder months and seasions. Anouther very interesting feature is the pattern of one off low ND followed by a few days of high ND.
+The Average ND throughout the year gave some insight into the right skew showing a strong potential link between ND in earlier months. Anouther very interesting feature is the pattern of one off low ND followed by a few days of high ND.
  
  
 <p align="center">
