@@ -102,22 +102,23 @@ print("Max Error:", "{:,.0f}".format(max_error))
 
 
 ## Plot predicted vs true Vale
-fig, ax = plt.subplots(nrows=1, ncols=2)
+fig = plt.figure()
+ax = plt.axes()
 from statsmodels.graphics.api import abline_plot
-ax[0].scatter(predicted, y_test, color="black")
-abline_plot(intercept=0, slope=1, color=colours[0], ax=ax[0])
-ax[0].vlines(x=max_pred, ymin=max_true, ymax=max_true-max_error, color=colours[0], linestyle='--', alpha=0.7, label="max error")
-ax[0].grid(True)
-ax[0].set(xlabel="Predicted", ylabel="True Value", title="Predicted vs True")
-ax[0].legend()
+ax.scatter(predicted, y_test, color="black")
+abline_plot(intercept=0, slope=1, color=colours[1], ax=ax)
+ax.vlines(x=max_pred, ymin=max_true, ymax=max_true-max_error, color=colours[1], linestyle='--', alpha=0.7, label="max error")
+ax.grid(True)
+ax.set(xlabel="Predicted", ylabel="True Value", title="Predicted vs True")
+ax.legend()
     
 ## Plot predicted vs residuals
-ax[1].scatter(predicted, residuals, color="red")
-ax[1].vlines(x=max_pred, ymin=0, ymax=max_error, color=colours[1], linestyle='--', alpha=0.7, label="max error")
-ax[1].grid(True)
-ax[1].set(xlabel="Predicted", ylabel="Residuals", title="Predicted vs Residuals")
-ax[1].hlines(y=0, xmin=np.min(predicted), xmax=np.max(predicted))
-ax[1].legend()
+#ax[1].scatter(predicted, residuals, color="red")
+#ax[1].vlines(x=max_pred, ymin=0, ymax=max_error, color=colours[1], linestyle='--', alpha=0.7, label="max error")
+#ax[1].grid(True)
+#ax[1].set(xlabel="Predicted", ylabel="Residuals", title="Predicted vs Residuals")
+#ax[1].hlines(y=0, xmin=np.min(predicted), xmax=np.max(predicted))
+#ax[1].legend()
 
 
 
