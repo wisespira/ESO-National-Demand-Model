@@ -68,7 +68,7 @@ Although both '2019 ND' and '2019 ND Ajusted' were explanatory variables to remo
 <a name="Model-Design"></a>
 <h2 align="center">Model Design</h2>
 
-There were a few obvious candidates for the design, namly: decision trees, multi linear regression (MLR) or neural network models.<br>
+There were a few obvious candidates for the design, including: decision trees, multi linear regression (MLR) or neural network models.<br>
 
 Although a linear relationship between independent and dependent veriables was not fully proven in the analysis stange, MLR was chosen due to its simplisitc setup and easy performance testing.
 
