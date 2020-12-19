@@ -8,12 +8,19 @@ import seaborn as sns
 import scipy
 import statsmodels.formula.api as smf
 import statsmodels.api as sm
+##Preprocessing 
+from sklearn import preprocessing
+
 
 ESO_Data = pd.read_csv("modelDataSet.csv")
 #******************Describing Data***********************
 print("******************Describing Data***********************")
+print("weekday\n")
 print(ESO_Data[ESO_Data["Week_Day"]==0].dailyND.describe())  
+print("weekend\n")
 print(ESO_Data[ESO_Data["Week_Day"]==1].dailyND.describe())  
+print("London_Avg_Temp")
+print(ESO_Data["London_Avg_Temp"].describe())  
 print("")
 
 #******************Correlation Testing***********************
@@ -63,7 +70,27 @@ fig = plt.figure()
 ax = plt.axes()
 ax.axes.get_xaxis().set_ticks([])
 ax.set_title('Average ND each day in 2020')
+ax.set_xticks([0,31,60,91,121,152,182,213,244]) # values
+ax.set_xticklabels(["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP"]) # labels
 ax.plot(ESO_Data['SETTLEMENT_DATE'], ESO_Data['dailyND']);
+
+#Should change to minMax this is a bad scaling
+def robustScaler(df, column):
+	df = preprocessing.RobustScaler(quantile_range=(25.0, 75.0))
+	return df.fit_transform(ESO_Data[column].values.reshape(-1,1))
+	
+
+fig = plt.figure()
+ax = plt.axes()
+ax.axes.get_xaxis().set_ticks([])
+ax.set_title('ND compared to London Avg Temp throughout the year (scaled)')
+box = "legend:\nRed- London average Temp ND\nBlue- Actual ND"
+ax.text(0.4, 0.975, box, transform=ax.transAxes, fontsize=10, va='top', ha="left", bbox=dict(boxstyle='round', facecolor='white', alpha=1))
+ax.set_xticks([0,31,60,91,121,152,182,213,244]) # values
+ax.set_xticklabels(["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP"]) # labels
+ax.plot(ESO_Data['SETTLEMENT_DATE'], robustScaler(ESO_Data,"London_Avg_Temp"));
+ax.plot(ESO_Data['SETTLEMENT_DATE'], robustScaler(ESO_Data,"dailyND"));
+#print(robustScaler(ESO_Data,"London_Avg_Temp"))
 
 
 

@@ -17,6 +17,7 @@ from sklearn.linear_model import LinearRegression
 plt.style.use('ggplot')
 #plt.style.use('dark_background')
 ESO_Data = pd.read_csv("modelDataSet.csv")
+ESO_Datafull = pd.read_csv("modelDataSet.csv")
 ESO_Data = ESO_Data.rename(columns={"dailyND":"Y"})
 ##Feature Selection 
 
@@ -30,12 +31,12 @@ print(ESO_Data.head())
 ##Should scale the data
 
 ## scale X
-ESO_Data_scalerX = preprocessing.RobustScaler(quantile_range=(25.0, 75.0))
-X = ESO_Data_scalerX.fit_transform(ESO_Data.drop("Y", axis=1))
-ESO_Data_scaled= pd.DataFrame(X, columns=ESO_Data.drop("Y", axis=1).columns, index=ESO_Data.index)
+#ESO_Data_scalerX = preprocessing.RobustScaler(quantile_range=(25.0, 75.0))
+#X = ESO_Data_scalerX.fit_transform(ESO_Data.drop("Y", axis=1))
+#ESO_Data_scaled= pd.DataFrame(X, columns=ESO_Data.drop("Y", axis=1).columns, index=ESO_Data.index)
 ## scale Y
-ESO_Data_scalerY = preprocessing.RobustScaler(quantile_range=(25.0, 75.0))
-ESO_Data_scaled["Y"] = ESO_Data_scalerY.fit_transform(ESO_Data["Y"].values.reshape(-1,1))
+#ESO_Data_scalerY = preprocessing.RobustScaler(quantile_range=(25.0, 75.0))
+#ESO_Data_scaled["Y"] = ESO_Data_scalerY.fit_transform(ESO_Data["Y"].values.reshape(-1,1))
 #print(dtf_scaled.head())
 
 #ESO_Data = dtf_scaled
@@ -81,6 +82,8 @@ plt.title('K-Fold Validation on training set')
 plt.legend()
 #plt.show()
 
+model = model.fit(X_train,y_train)
+
 ##*************Test***************
 predicted = model.predict(X_test)
 print(model.coef_)
@@ -115,7 +118,25 @@ ax[1].grid(True)
 ax[1].set(xlabel="Predicted", ylabel="Residuals", title="Predicted vs Residuals")
 ax[1].hlines(y=0, xmin=np.min(predicted), xmax=np.max(predicted))
 ax[1].legend()
+
+
+
+
+fig = plt.figure()
+ax = plt.axes()
+#ax.axes.get_xaxis().set_ticks([])
+#ax.axes.get_xaxis().set_ticks()
+ax.set_xticks([0,31,60,91,121,152,182,213,244]) # values
+ax.set_xticklabels(["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP"]) # labels
+#ax.set_xticks(np.arange(3), ['Tom', 'Dick', 'Sue'])
+print(ax.axes.get_xaxis())
+box = "Legend:\nYellow- Predicted ND\nRed- Actual ND"
+ax.text(0.6, 0.975, box, transform=ax.transAxes, fontsize=10, va='top', ha="left", bbox=dict(boxstyle='round', facecolor='white', alpha=1))
+ax.set_title('Predicted vs Actual ND')
+ax.plot(ESO_Datafull['SETTLEMENT_DATE'], model.predict(ESO_Data[X_names].values), color = colours[0]);
+ax.plot(ESO_Datafull['SETTLEMENT_DATE'], ESO_Datafull['dailyND'],color = colours[1]);
+
+#ax.plot(ESO_Datafull['SETTLEMENT_DATE'], ESO_Datafull['dailyND2019'], color = colours[3]);
+#ax.plot(ESO_Datafull['SETTLEMENT_DATE'], ESO_Datafull['dailyND2019Adj'], color = colours[3]);
 plt.show()
-
-
 
