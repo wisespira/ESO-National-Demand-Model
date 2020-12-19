@@ -94,3 +94,4 @@ Needs to be fully implemented currently commented out.
 The areas highlighted are some of the more notisable under/over perdictions by the model it, further investigation into why.
 <a name="Summary"></a>
 <h2 align="center">Summary</h2>
+Overall the MLR model proved fairly accuate only having an avarage error of 8%. 
