@@ -76,7 +76,7 @@ Although a linear relationship between independent and dependent variables was n
 <a name="Preprocessing"></a>
 <h3 align="center">Preprocessing</h3>
 
-Needs to be fully implemented, currently commented out.
+Was not fully implemented, currently commented out.
 
 <a name="Performance"></a>
 <h2 align="center">Performance</h2>
