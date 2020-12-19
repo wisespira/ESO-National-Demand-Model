@@ -80,6 +80,9 @@ Needs to be fully implemented currently commented out.
 <a name="Performance"></a>
 <h2 align="center">Performance</h2>
  <p align="center">
+ <img src="https://raw.githubusercontent.com/wisespira/ESO-National-Demand-Model/master/imgs/results.png">
+ </p>
+ <p align="center">
  <img src="https://raw.githubusercontent.com/wisespira/ESO-National-Demand-Model/master/imgs/PredictedVsTrue.png">
  </p>
   <p align="center">
