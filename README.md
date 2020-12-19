@@ -43,14 +43,14 @@ To begin with it was usfull to just have a brows through the data. The avarage d
 <img width="700" src="https://raw.githubusercontent.com/wisespira/ESO-National-Demand-Model/master/imgs/AverageNDEachDay2020.png">
  </p>
  
-The Average ND throughout the year gave some insight into the right skew showing a strong potential link between ND in earlier months. Anouther very interesting feature is the pattern of one off low ND followed by a few days of high ND.
+One trend found from Average ND throughout the year was the begining of sping drop in avarage ND, considering most of the data is in spring and summer this could account for the right skew. Anouther interesting observation is the pattern of one off low ND followed by a few days of high ND.
  
  
 <p align="center">
 <img width="700" src="https://raw.githubusercontent.com/wisespira/ESO-National-Demand-Model/master/imgs/weekdayWeekendComparison.png">
   </p>  
 
-To maybe gain insight into some of the observations It was usfull to compare some of the other data for similar trends. Although the two data sets looked near identical the weekdays did have a notably higher upper quartile giving weekdays a bigger impact on the right skew. It will be nessisary to beak the data down into days to find further insight.
+Although the two data sets looked near identical the weekdays did have a notably higher upper quartile giving weekdays a bigger impact on the right skew. It will be nessisary to beak the data down into days to find further insight.
 
  <p align="center">
 <img width="700" src="https://raw.githubusercontent.com/wisespira/ESO-National-Demand-Model/master/imgs/2019adjVS2019.png">
@@ -66,15 +66,24 @@ All veriables were corrilation and one-way ANOVA tested against the 2020 ND. Fro
 </p>
 Although both '2019 ND' and '2019 ND Ajusted' were explanatory variables to remove any potential multicollinearity problems only the 2019 Ajustend was used as it had the higher corilation. 
 <a name="Model-Design"></a>
-As I established a liniar relationship between my dependent and all my independent veriables a MLR model was chosen. 
 <h2 align="center">Model Design</h2>
+
+There were a few obvious candidates for the design, namly: decision trees, multi linear regression (MLR) or neural network models.<br>
+
+Although a linear relationship between independent and dependent veriables was not fully proven in the analysis stange, MLR was chosen due to its simplisitc setup and easy performance testing.
+
 <a name="Preprocessing"></a>
 <h3 align="center">Preprocessing</h3>
 
+Needs to be fully implemented currently commented out.
+
 <a name="Performance"></a>
 <h2 align="center">Performance</h2>
-
-Draw prediction graph against the actual graph 
-
+ <p align="center">
+ <img src="https://raw.githubusercontent.com/wisespira/ESO-National-Demand-Model/master/imgs/cor%26pvalueExcel.png">
+ </p>
+  <p align="center">
+  <img src="https://raw.githubusercontent.com/wisespira/ESO-National-Demand-Model/master/imgs/cor%26pvalueExcel.png">
+</p>
 <a name="Summary"></a>
 <h2 align="center">Summary</h2>
