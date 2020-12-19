@@ -84,11 +84,11 @@ Was not fully implemented, currently commented out.
  <p align="center">
  <img src="https://raw.githubusercontent.com/wisespira/ESO-National-Demand-Model/master/imgs/results.png">
  </p>
- The areas highlighted are some of the more noticeable under/over predictions by the model, further investigation into why is needed.
+ The overall performance was good, with a Mean Absolute Perc Error of around 8%.
     <p align="center">
  <img src="https://raw.githubusercontent.com/wisespira/ESO-National-Demand-Model/master/imgs/PredictedVsTrue.png">
  </p>
-The overall performance was good, with a Mean Absolute Perc Error of around 8%.
+
 
   <p align="center">
   <img src="https://raw.githubusercontent.com/wisespira/ESO-National-Demand-Model/master/imgs/PredictedVsTrue2.png">
