@@ -2,7 +2,13 @@
 <h2 align="center">National Demand Model 📈</h2>
 
 <p align="center">
-This project uses multi linear regression to create a predictive model for England and Wales national energy demand. The model is currently happily sitting with an average accuracy of 92%. The data used includes historical ND (national demand) data gathered from the National Grid ESO and London's daily average temperature scraped from weather.com to make its predictions. There is still much work to be done and as such, this readme contains both an account of the project and notes for further research. 
+This project uses multi linear regression (MLR) to predict the national energy demand for England and Wales. The model is currently happily sitting with an average accuracy of 92%. The data used includes historical ND (national demand) data gathered from the National Grid ESO and London's daily average temperature scraped from weather.com to make its predictions. There is still much work to be done and as such, this readme contains both an account of the project and notes for further research. 
+</p>
+<h3 align="center">Structure</h3>
+<p  align="center">
+Model.py - MLR and performance logic<br>
+dataAnalysis.py - Data description and visualisations<br>
+generateModelData.py - Generates modelDataSet.csv from data contained in 'ESO and Weather Data' directory
 </p>
 <h3 align="center">contents</h3>
 <p align="center">
