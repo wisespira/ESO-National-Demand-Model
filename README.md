@@ -7,6 +7,7 @@ This project uses multi linear regression (MLR) to predict the national energy d
 
 <h3 align="center">contents</h3>
 <p align="center">
+<a  href="#Structure">Project Structure</a><br>
 <a  href="#Data-Gathering">Data Gathering</a><br>
 <a  href="#Data-Engineering">Feature Engineering</a><br>
 <a  href="#Initial-Analysis">Data Analysis</a><br>
