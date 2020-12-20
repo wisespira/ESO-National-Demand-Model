@@ -15,7 +15,7 @@ This project uses multi linear regression (MLR) to predict the national energy d
 <a  href="#Model-Design">Model Design</a><br>
 <a  href="#Model-Design">Preprocessing</a><br>
 <a  href="#Performance">Performance</a><br>
-<a  href="#Summary">Summary</a><br>
+ <!--- <a  href="#Summary">Summary</a><br>--->
 </p>
 <br>
 
@@ -106,5 +106,5 @@ Was not fully implemented, currently commented out.
 </p>
 The areas highlighted are some of the more noticeable under/over predictions by the model, further investigation into why is needed.
 <a name="Summary"></a>
-<h2 align="center">Summary</h2>
+ <!--- <h2 align="center">Summary</h2>
 Overall the MLR model proved fairly accurate, only having an average error of 8%. 
