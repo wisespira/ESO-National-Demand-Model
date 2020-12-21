@@ -69,7 +69,7 @@ Although the two data sets looked near-identical, the weekdays did have a notabl
 <img width="700" src="https://raw.githubusercontent.com/wisespira/ESO-National-Demand-Model/master/imgs/2019adjVS2019.png">
 </p>
 
-The assumption proved correct that the days of the week were more relevant in general. However, It would be interesting to look for dates which the calender aligned set did better as it may highlight other key elements.  
+The assumption proved correct that the days of the week were more relevant in general. However, It would be interesting to look for dates which the calender aligned set did better as it may highlight other key features.  
 
 <a name="Feature-selection"></a>
 <h3 align="center">Feature Selection</h3>
