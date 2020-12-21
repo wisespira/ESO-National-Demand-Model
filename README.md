@@ -22,7 +22,7 @@ This project uses multi linear regression (MLR) to predict the national energy d
 <a name="Structure"></a>
 <h2 align="center">Project Structure</h2>
 <p>
-Model.py - MLR and performance logic<br>
+Model.py - MLR Model and performance logic<br>
 dataAnalysis.py - Data description and visualisations<br>
 generateModelData.py - Generates modelDataSet.csv from data contained in 'ESO and Weather Data' directory
 </p>
