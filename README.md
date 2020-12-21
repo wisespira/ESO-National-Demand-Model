@@ -2,7 +2,7 @@
 <h2 align="center">National Demand Model 📈</h2>
 
 <p align="center">
-This project uses multilinear regression (MLR) to predict the national energy demand for England and Wales. The model is currently happily sitting with an average accuracy of ~92% and R^2 of ~0.72. The data used includes historical ND (national demand) data gathered from the National Grid ESO and London's daily average temperature scraped from weather.com to make its predictions. As there is still much work to be done, this readme contains both an account of the project and notes for further research.
+This project uses multilinear regression (MLR) to predict the national energy demand for England and Wales. The model is currently happily sitting with an average accuracy of ~92% and R^2 of ~0.72. The data used includes historical ND (national demand) data gathered from the National Grid ESO and London's daily average temperature scraped from weather.com to make its predictions. The project is still ongoing. Therefore, this readme contains both an account of the project and notes for further research.
 </p>
 
 <h3 align="center">contents</h3>
@@ -38,7 +38,7 @@ To combine the two data sets, the ND was first averaged for each day, then joine
 <a name="Data-Engineering"></a>
 <h3 align="center">Data Engineering</h3>
 
-Weekday/weekend data was added to the data set with a python function by looping through the set appending 1 for weekdays and 0 for weekends. An adjusted copy of the 2019 data was also added in which all data was sifted up one day. The reasoning for the adjusted copy was an assumption that day of the week would be more relevant than the date. <br>
+Weekday/weekend data was added to the data set with a python function. The function looped through the set appending, 1 for weekdays and 0 for weekends. An adjusted copy of the 2019 data was also added, in which all data was sifted up one day. The reasoning for this was an assumption that day of the week would be more relevant than the date. <br>
 
 <a name="Initial-Analysis"></a>
 <h2 align="center">Data Analysis</h2>
@@ -73,11 +73,11 @@ The assumption proved correct that the days of the week were more relevant in ge
 
 <a name="Feature-selection"></a>
 <h3 align="center">Feature Selection</h3>
-All variables were correlation and one-way ANOVA tested against the 2020 ND. From the results show below, all but the weekday/weekend variable were shown to have predictive qualities. <br>  <br>
+All variables were correlated, then one-way ANOVA tested against the 2020 ND. All but the weekday/weekend variable had predictive qualities, as shown below. <br>  <br>
  <p align="center">
  <img src="https://raw.githubusercontent.com/wisespira/ESO-National-Demand-Model/master/imgs/cor%26pvalueExcel.png">
 </p>
-Although both '2019 ND' and '2019 ND Adjusted' were explanatory variables to remove any potential multicollinearity problems only the 2019 Ajustend was used as it had a higher correlation. 
+Although both '2019 ND' and '2019 ND Adjusted' were explanatory variables, to remove potential multicollinearity problems, only the 2019 ajustend was used as it had a higher correlation. 
 <a name="Model-Design"></a>
 <h2 align="center">Model Design</h2>
 There were a few obvious candidates for the design, including decision trees, multilinear regression (MLR), or neural network models.<br>
@@ -104,7 +104,7 @@ Was not fully implemented, currently commented out.
   <p align="center">
   <img src="https://raw.githubusercontent.com/wisespira/ESO-National-Demand-Model/master/imgs/PredictedVsTrue2.png">
 </p>
-The areas highlighted are some of the more noticeable under/over predictions by the model, further investigation into why is needed.
+The areas highlighted are some of the models more noticeable under/over predictions, further investigation into why is needed.
 <a name="Summary"></a>
  <!--- <h2 align="center">Summary</h2>
 Overall the MLR model proved fairly accurate, only having an average error of 8%. 
