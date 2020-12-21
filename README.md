@@ -56,7 +56,7 @@ The average daily demand was right-skewed, it was unclear why this was. Possible
 <img width="700" src="https://raw.githubusercontent.com/wisespira/ESO-National-Demand-Model/master/imgs/AverageNDEachDay2020.png">
  </p>
  
-One trend found from Average ND throughout the year was the beginning of spring drop in average ND. This drop could account for the right skew, as most of the data takes place in spring and summer. Another observation is the pattern of one-off low ND, followed by a few days of high ND.
+From looking at Average ND throughout the year it was clear beginning of somthing round spring drop signaled a drop in average daily ND. This drop could account for the right skew, as most of the data takes place in spring and summer. Another observation is the pattern of one-off low ND, followed by a few days of high ND.
  
  
 <p align="center">
