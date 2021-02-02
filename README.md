@@ -1,8 +1,8 @@
 
 <h2 align="center">National Demand Model 📈</h2>
-
+<h2 align="center">Simple data science Project</h2>
 <p align="center">
-This project uses multilinear regression (MLR) to predict the national energy demand for England and Wales. The model is currently happily sitting with an average accuracy of ~92% and R^2 of ~0.72. The data used includes historical ND (national demand) data gathered from the National Grid ESO and London's daily average temperature scraped from weather.com to make its predictions. The project is still ongoing. Therefore, this readme contains both an account of the project and notes for further research.
+This project uses multilinear regression (MLR) to predict the national energy demand for England and Wales. The model is currently has an R^2 of ~0.72. The data used includes historical ND (national demand) data gathered from the National Grid ESO and London's daily average temperature scraped from weather.com to make its predictions. The project is still ongoing. Therefore, this readme contains both an account of the project and notes for further research.
 </p>
 
 <h3 align="center">contents</h3>
