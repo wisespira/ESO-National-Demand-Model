@@ -49,7 +49,7 @@ A surface level analysis was conducted for any potential insights.
 <img  width="700" src="https://raw.githubusercontent.com/wisespira/ESO-National-Demand-Model/master/imgs/probability%20distribution%20of%20National%20Demand.png">
 </p>
 
-The average daily demand was right-skewed, it was unclear why this was. Possible factors included infrequent events like holidays/sporting events or a shorter period of the year where people required heating. It may even be due to the data not featuring the full year or something else entirely. 
+The average daily demand was right-skewed, it was unclear why this was. Possible factors could included infrequent events like holidays/sporting events or a shorter period of the year where people required heating. It may even be due to the data not featuring the full year or something else entirely. 
 
 <p align="center">
 <img width="700" src="https://raw.githubusercontent.com/wisespira/ESO-National-Demand-Model/master/imgs/AverageNDEachDay2020.png">
