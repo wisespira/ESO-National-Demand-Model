@@ -103,7 +103,7 @@ Was not fully implemented, currently commented out.
   <p align="center">
   <img src="https://raw.githubusercontent.com/wisespira/ESO-National-Demand-Model/master/imgs/PredictedVsTrue2.png">
 </p>
-The areas highlighted are some of the models more noticeable under/over predictions, further investigation into why is needed.
+The areas highlighted are some of the models more noticeable under/over predictions, further investigation into why is needed.TBC
 <a name="Summary"></a>
  <!--- <h2 align="center">Summary</h2>
 Overall the MLR model proved fairly accurate, only having an average error of 8%. 
